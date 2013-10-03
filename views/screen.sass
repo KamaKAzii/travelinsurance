@@ -1,17 +1,39 @@
 @import "compass/reset"
-@import "compass/utilities/general/clearfix"
+@import "compass/utilities"
 @import "compass/css3"
 @import "compass/css3/font-face"
 
 +font-face("FontAwesome", font-files("/fonts/fontawesome-webfont.woff", "woff", "/fonts/fontawesome-webfont.ttf", "ttf", "/fonts/fontawesome-webfont.otf", "otf"))
 
 // Variables
-$theme-top: #ff0000
-$theme-bottom: #a10003
+$theme: #ff0000
+$header-theme-top: #ff0000
+$header-theme-bottom: #bf0000
+$body-theme-top: #ff0000
+$body-theme-bottom: #a10003
+$text-color: #ffffff
 
-body
+.icon
   font-family: FontAwesome
-  +background-image(linear-gradient($theme-top, $theme-bottom))
+
+// Header
+header
+  +background-image(linear-gradient($header-theme-top, $header-theme-bottom))
+  .breadcrumb
+    +pie-clearfix
+    color: $text-color
+  li  
+    +float(left)
+    width: 25%
+    line-height: 60px
+    text-align: center
+    font-size: 22px
+  .one
+    font-size: 25px
+
+// Structure
+body
+  +background-image(linear-gradient($body-theme-top, $body-theme-bottom))
   -webkit-text-size-adjust: none
 
 .site-wide-container
