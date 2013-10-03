@@ -1,13 +1,16 @@
 @import "compass/reset"
 @import "compass/utilities/general/clearfix"
 @import "compass/css3"
+@import "compass/css3/font-face"
 
++font-face("FontAwesome", font-files("/fonts/fontawesome-webfont.woff", "woff", "/fonts/fontawesome-webfont.ttf", "ttf", "/fonts/fontawesome-webfont.otf", "otf"))
 
 // Variables
 $theme-top: #ff0000
 $theme-bottom: #a10003
 
 body
+  font-family: FontAwesome
   +background-image(linear-gradient($theme-top, $theme-bottom))
   -webkit-text-size-adjust: none
 
