@@ -15,7 +15,13 @@ configure do
   set :sass, Compass.sass_engine_options
 end
 
+
 get "/stylesheets/screen.css" do
   content_type 'text/css'
   sass :screen
 end
+
+get "/" do
+  erb :index, :layout => :layout
+end
+
