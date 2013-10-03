@@ -1,11 +1,15 @@
 @import "compass/reset"
 @import "compass/utilities/general/clearfix"
+@import "compass/css3"
+
+
+// Variables
+$theme-top: #ff0000
+$theme-bottom: #a10003
 
 body
-  background: red
+  +background-image(linear-gradient($theme-top, $theme-bottom))
   -webkit-text-size-adjust: none
 
 .site-wide-container
-  background: blue
-  height: 800px
-  width: 100%
+  min-height: 600px
