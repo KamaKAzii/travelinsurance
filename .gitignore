@@ -17,6 +17,8 @@
 
 # Custom
 
+.rvmrc
+
 .DS_Store
 .sass-cache
 _documents/
