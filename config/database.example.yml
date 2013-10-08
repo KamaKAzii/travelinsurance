@@ -1,0 +1,8 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: travelinsurance_production
+  pool: 5
+  host: localhost
+  username: travelinsurance
+  password: penkey20
