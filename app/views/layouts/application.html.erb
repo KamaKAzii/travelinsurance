@@ -12,6 +12,30 @@
 
 <body>
 
+  <div class="site-wide-container">
+    <header>
+      <ul class="breadcrumb icon">
+        <li class="one">&#xf072;</li>
+        <li class="two">&#xf10e;</li>
+        <li class="three">&#xf03a;</li>
+        <li class="four">&#xf09d;</li>
+      </ul>
+    </header>
+
+    <section>
+      <%= yield %>
+    </section>
+
+  </div>
+
+  <script>
+    window.addEventListener("load",function() {
+       setTimeout(function(){
+        window.scrollTo(0, 0);
+        }, 0);
+     });
+  </script>
+
 <%= yield %>
 
 </body>
