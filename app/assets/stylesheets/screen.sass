@@ -7,33 +7,66 @@
 
 // Variables
 $theme: #ff0000
-$header-theme-top: #ff0000
-$header-theme-bottom: #bf0000
-$body-theme-top: #ff0000
-$body-theme-bottom: #a10003
-$text-color: #ffffff
+$theme-light: #ff8383
+$theme-dark: #bf0000
+
+$header-top: #ff0000
+$header-bottom: #bf0000
+
+$body-top: #ff0000
+$body-bottom: #a10003
+
+$text-color-normal: #ffffff
+
+$pointer: #ffffff
 
 .icon
   font-family: FontAwesome
 
 // Header
 header
-  +background-image(linear-gradient($header-theme-top, $header-theme-bottom))
+  +background-image(linear-gradient($header-top, $header-bottom))
   .breadcrumb
     +pie-clearfix
-    color: $text-color
   li  
     +float(left)
+    position: relative
     width: 25%
     line-height: 60px
     text-align: center
     font-size: 22px
-  .one
+    &.active
+      color: $theme-light
+    &.inactive
+      color: $theme-dark
+    &.complete
+      color: $text-color-normal
+  .travel
     font-size: 25px
+  .pointer
+    $pointer-width: 40px
+    position: absolute
+    top: 6px
+    left: 50%
+    margin-left: -$pointer-width / 2 - 2px
+    border: 2px solid $pointer
+    width: $pointer-width
+    height: $pointer-width
+    +border-radius($pointer-width)
+  .edit
+    $edit-width: 20px
+    font-size: 14px
+    line-height: 14px
+    width: $edit-width
+    height: $edit-width
+    position: absolute
+    margin-left: $edit-width
+    left: 50%
+    top: 3px
 
 // Structure
 body
-  +background-image(linear-gradient($body-theme-top, $body-theme-bottom))
+  +background-image(linear-gradient($body-top, $body-bottom))
   -webkit-text-size-adjust: none
 
 .site-wide-container

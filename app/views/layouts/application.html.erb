@@ -15,10 +15,21 @@
   <div class="site-wide-container">
     <header>
       <ul class="breadcrumb icon">
-        <li class="one">&#xf072;</li>
-        <li class="two">&#xf10e;</li>
-        <li class="three">&#xf03a;</li>
-        <li class="four">&#xf09d;</li>
+        <li class="travel complete">
+          &#xf072;
+          <span class="pointer"></span>
+          <span class="edit">&#xf044;</span>
+        </li>
+        <li class="quote active">
+          &#xf10e;
+          <span class="pointer"></span>
+        </li>
+        <li class="people inactive">
+          &#xf03a;
+        </li>
+        <li class="payment inactive">
+          &#xf09d;
+        </li>
       </ul>
     </header>
 
@@ -35,8 +46,6 @@
         }, 0);
      });
   </script>
-
-<%= yield %>
 
 </body>
 </html>
