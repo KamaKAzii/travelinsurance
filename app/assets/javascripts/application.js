@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require breadcrumb
+//= require main
 //= require_tree .
