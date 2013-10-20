@@ -2,9 +2,22 @@ header
   +background-image(linear-gradient($header-top, $header-bottom))
   .breadcrumb
     +pie-clearfix
-  li  
-    +float(left)
     position: relative
+    height: 60px
+  .logo
+    $physical-width: 277px / 2
+    $physical-height: 90px / 2
+    position: absolute
+    left: 50%
+    margin-left: -$physical-width / 2
+    width: $physical-width
+    height: $physical-height
+    background: transparent image-url("logo.png") no-repeat left top
+    background-size: $physical-width $physical-height
+
+  li
+    +float(left)
+    position: absolute
     width: 25%
     line-height: 60px
     text-align: center

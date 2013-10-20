@@ -1,6 +1,9 @@
 (function ($) {
   $.fn.extend({
-    breadcrumb: function () {
+    breadcrumb: function (opt) {
+      opt = $.extend({
+        isPageLoad: true
+      }, opt);
       utils = {
         makeCrumbComplete: function($crumb) {
           $crumb.data("edit").show();
@@ -32,6 +35,23 @@
             $lis.push($peopleLi);
             var $paymentLi = $("<li>").html("&#xf09d;").appendTo($ul).data("position", 4);
             $lis.push($paymentLi);
+
+            $.each($lis, function(index, $li) {
+              $li.css("left", index * 25 + "%");
+            });
+
+            if (opt.isPageLoad) {
+              var $logo = $("<div>")
+                .addClass("logo")
+                .css("top", "5px");
+
+              self.append($logo);
+
+              var bodyHeight = $("body").height();
+              $.each($lis, function(index, $li) {
+                $li.css("top", bodyHeight / 2 + "px");
+              });
+            }
 
             $.each($lis, function() {
               var $currentLi = $(this);
