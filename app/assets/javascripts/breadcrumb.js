@@ -46,6 +46,7 @@
                 .css("top", "5px");
 
               self.append($logo);
+              self.data("logo", $logo);
 
               var bodyHeight = $("body").height();
               $.each($lis, function(index, $li) {
@@ -67,8 +68,44 @@
             self.data("crumbs", $lis);
             self.append($ul);
 
-            self.triggerHandler("addBaseEvents");
-
+            if (opt.isPageLoad) {
+              setTimeout(function() {
+                self.triggerHandler("animateFromPageLoadState");
+              }, 2000);
+            } else {
+              self.triggerHandler("addBaseEvents");
+            }
+          })
+          .on("animateFromPageLoadState", function() {
+            self.triggerHandler("animateLogo", [true]);
+            $.each(self.data("crumbs"), function(index, $li) {
+              $li
+                .delay(index * 100)
+                .animate({
+                  top: "-5px"
+                }, {
+                  duration: 800,
+                  done: function() {
+                    $(this).animate({
+                      top: "0px"
+                    }, {
+                      duration: 100
+                    });
+                  }
+                }
+              );
+              self.triggerHandler("addBaseEvents");
+            });
+          })
+          .on("animateLogo", function(e, animateOut) {
+            var $logo = self.data("logo");
+            var target = animateOut ? -60 : 60;
+            $logo.animate({
+              top: $logo.position().top + target + "px",
+              opacity: 0
+            }, {
+              duration: 1000
+            });
           })
           .on("addBaseEvents", function() {
             // Lis
