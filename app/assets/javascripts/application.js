@@ -16,5 +16,3 @@
 //= require breadcrumb
 //= require main
 //= require_tree .
-
-alert("hello");
