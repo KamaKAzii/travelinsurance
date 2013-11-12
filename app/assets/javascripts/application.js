@@ -12,7 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require fastclick
-//= require breadcrumb
-//= require main
 //= require_tree .

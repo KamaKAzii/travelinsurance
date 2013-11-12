@@ -4,6 +4,5 @@ $(function() {
 
 
 $(document).ready(function() {
-  ti.controller.onWebsiteLoad();
-  ti.controller.initHomePage();
+  ti.controller.open();
 });
