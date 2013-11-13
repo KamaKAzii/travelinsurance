@@ -94,8 +94,11 @@
                   }
                 }
               );
-              self.triggerHandler("addBaseEvents");
             });
+            setTimeout(function() {
+              self.triggerHandler("breadcrumbLoadAnimationFinished");
+              self.triggerHandler("addBaseEvents");
+            }, 800);
           })
           .on("animateLogo", function(e, animateOut) {
             var $logo = self.data("logo");

@@ -32,5 +32,18 @@ var mg = {
       .append($button);
 
     return $containerDiv;
+  },
+  button: function(classesString, text) {
+    var $containerDiv = $("<div>")
+      .attr({
+        "class": "action " + classesString
+      });
+    var $button = $("<button>")
+      .html(text);
+
+    $containerDiv
+      .append($button);
+
+    return $containerDiv;
   }
 };

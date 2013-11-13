@@ -15,9 +15,14 @@ button
   font-weight: 700
   font-size: 16px
   height: 46px
-  padding: 0
+  padding: 0 20px
   margin: 0
   display: block
+  background: $button-positive-background
+  color: $button-positive-color
+  text-transform: uppercase
+  &:active, &:focus
+    background: $button-positive-background-active
 
 .text
   +transition-property('margin-left, margin-right')
@@ -40,13 +45,18 @@ button
     // right: 0
     right: -$width - $gutter
     width: $width
+    padding: 0
     background: $button-positive-background
-    color: $button-positive-color
-    &:active
-      background: $button-positive-background-active
   &.active
     margin-left: 0
     margin-right: 0
     button
       right: 0
       display: block
+
+.action
+  margin-bottom: $line
+  text-align: right
+  button
+    +float(right)
+    margin-left: $gutter

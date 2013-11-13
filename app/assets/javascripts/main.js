@@ -14,6 +14,9 @@ $(document).ready(function() {
   // Deals with setting up page height and breadcrumb.
   ti.controller.initPage();
 
-  // First controller action
-  ti.controller.open();
+  // First controller action after breadcrumb is finished
+  $("header").on("breadcrumbLoadAnimationFinished", function() {
+    ti.controller.open();
+  });
+
 });
