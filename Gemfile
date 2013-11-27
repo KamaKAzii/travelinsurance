@@ -9,6 +9,7 @@ gem 'compass-rails', '~> 2.0.alpha.0'
 
 group :development, :test do
   gem "rspec-rails"
+  gem "capybara"
   gem "debugger"
 end
 
